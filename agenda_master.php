@@ -1,15 +1,16 @@
 <?
  /**
- * @comment Ẻ�����������Ǣ�͡�èѴ�Ѵ����º����
+ * @comment áºº¿ÍÃìÁà¾ÔèÁËÑÇ¢éÍ¡ÒÃ¨Ñ´¨Ñ´ÃÐàºÕÂºÇÒÃÐ
  * @projectCode 57CMSS10
- * @tor 10.4.1 �к����¡�úѹ�֡���С�û�Ъ�� �.�.�.�.
+ * @tor 10.4.1 ÃÐººÂèÍÂ¡ÒÃºÑ¹·Ö¡ÇÒÃÐ¡ÒÃ»ÃÐªØÁ Í.¡.¤.È.
  * @package core
  * @author Sathianphong Sukin
  * @access public
+ * Test by finance
  * @created 23/01/2015
  */
 ###################################################################
-## AGENDA  : CMSS Ẻ�����������Ǣ�͡�èѴ�Ѵ����º����
+## AGENDA  : CMSS áºº¿ÍÃìÁà¾ÔèÁËÑÇ¢éÍ¡ÒÃ¨Ñ´¨Ñ´ÃÐàºÕÂºÇÒÃÐ
 ###################################################################
 ## Version :			20100630.001 (Created/Modified; Date.RunNumber)
 ## Created Date :	2010-06-30
@@ -123,7 +124,7 @@ $caption= htmlspecialchars($row[secname]);
 							$sql="select secname from eduarea where secid='$Row_Info[siteid]'";
 							$result_edu=mysql_db_query($dbmaster,$sql);
 							$row=mysql_fetch_array($result_edu);
-							$caption_site= str_replace("�ӹѡ�ҹࢵ��鹷�����֡��","",htmlspecialchars($row[secname]));
+							$caption_site= str_replace("ÊÓ¹Ñ¡§Ò¹à¢µ¾×é¹·Õè¡ÒÃÈÖ¡ÉÒ","",htmlspecialchars($row[secname]));
 							
 							//$sitename = ($_SESSION[session_agenda] == "3" ) ? $caption_site." " : "";
 							//$title = //$Row_Info_time[profile_name];
@@ -181,7 +182,7 @@ var year_regis = d.getFullYear();
 	$('.fc-button-next,.fc-button-prev').click(function() {
 		
 		/* modify by panupong 
-		['comment'] => ���ͷӡ�ë�͹�ǻ�ԷԹ��÷Ѵ��ҧ�ش ����ʴ���͹�Ѵ�
+		['comment'] => à¾×èÍ·Ó¡ÒÃ«èÍ¹á¶Ç»¯Ô·Ô¹ºÃÃ·Ñ´ÅèÒ§ÊØ´ ·ÕèáÊ´§à´×Í¹¶Ñ´ä»
 		[23/3/2015] */
 		/*$('.fc-day-number, .fc-week5, .fc-week4').show();
 		$('.fc-other-month .fc-day-number').hide();
@@ -339,12 +340,12 @@ $(document).ready(function() {
 <body style="margin-top:0">
 <?php if(!empty($_GET['li'])){?>
 <br />
-<div id='title' align="center" class="table_head_text" style="font-size:14px;"><strong>��§ҹ��û�Ъ�����͹ء�����â���Ҫ��ä����кؤ�ҡ÷ҧ����֡�� (�.�.�.�.) <br /><?=$caption?></strong></div>
+<div id='title' align="center" class="table_head_text" style="font-size:14px;"><strong>ÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ¤³ÐÍ¹Ø¡ÃÃÁ¡ÒÃ¢éÒÃÒª¡ÒÃ¤ÃÙáÅÐºØ¤ÅÒ¡Ã·Ò§¡ÒÃÈÖ¡ÉÒ (Í.¡.¤.È.) <br /><?=$caption?></strong></div>
 <br />
 <?php
  if($_GET['li'] !=='3'){  /* ?>
     <select name="area" id="area" onchange="location.href='?area='+this.options[this.options.selectedIndex].value+'&li=<?php echo $_GET['li'];?>'">
-        <option value="">--- �ءࢵ��鹷�����֡�� ---</option>
+        <option value="">--- ·Ø¡à¢µ¾×é¹·Õè¡ÒÃÈÖ¡ÉÒ ---</option>
         <?php
             $sql_edu = " SELECT * FROM `eduarea` WHERE status=1 ORDER BY orderby  " ; 
             $result_edu = mysql_db_query($dbmaster,$sql_edu) ; 
@@ -357,7 +358,7 @@ $(document).ready(function() {
                 echo "<option $sltd value='".$rs_edu[secid]."'>".$rs_edu[secname_short]."</option>";
             }
             
-            //$areaname = str_replace("�ӹѡ�ҹࢵ��鹷�����֡��","ʾ�.",$rs_edu[secname]);
+            //$areaname = str_replace("ÊÓ¹Ñ¡§Ò¹à¢µ¾×é¹·Õè¡ÒÃÈÖ¡ÉÒ","Ê¾·.",$rs_edu[secname]);
         ?>
     </select>
 <?php */ }
@@ -386,8 +387,8 @@ $(document).ready(function() {
 		<div id='calendar'  style="width:360px; float:left; margin-top:30px; margin-left:40px;" ></div>
         <div style="width:700px; float:left; margin-left:40px; margin-top:40px; height:500px">
         	<div id="buttonChangeMode" style="border:1px solid #ccc; border-radius:3px; width:100px; height:34px; position:absolute; right:85px; background-color:#f7f7f8;">
-            	<div id="graph_mode" style="float:left; padding:5px; cursor:pointer;">��ҿ</div>
-            	<div id="list_mode" style="float:left; border-left:1px solid #ccc; padding:5px; cursor:pointer;">��¡��</div>
+            	<div id="graph_mode" style="float:left; padding:5px; cursor:pointer;">¡ÃÒ¿</div>
+            	<div id="list_mode" style="float:left; border-left:1px solid #ccc; padding:5px; cursor:pointer;">ÃÒÂ¡ÒÃ</div>
             </div>
         	<iframe id="garph_pie"  src="../reportbuilder_cmss_master/report/agenda/filter.php?id=202&year=<?php echo date('Y')+543;?>&graph&width=700&height=300" width="100%" height="350" style="border:none; overflow:hidden;"></iframe>
         	<iframe id="list_meeting" name="show_adenda_list" src="agenda_profile_date.php" width="100%" frameborder="0" height="300" style="margin-top:30px;"></iframe>
@@ -396,13 +397,13 @@ $(document).ready(function() {
 <br />
 		<div align="center" style="font-size:12px;  position:absolute; top:630px; ">
 		<?php
-			echo ("<img src='images/promo_green.png' align='absmiddle' title='�ӹǹ��û�Ъ�� 1-10 ����' />&nbsp;�ӹǹ ��û�Ъ�� 1-10 ����&nbsp;&nbsp;");
-			echo ("<img src='images/promo_green_light.png' align='absmiddle' title='�ӹǹ��û�Ъ�� 11-20 ����' />&nbsp;�ӹǹ ��û�Ъ�� 11-20 ����&nbsp;&nbsp;");
-			echo ("<img src='images/promo_orange.png' align='absmiddle' title='�ӹǹ��û�Ъ��  21-30 ����' />&nbsp;�ӹǹ ��û�Ъ��  21-30 ����&nbsp;&nbsp;");
-			echo ("<img src='images/promo_red.png' align='absmiddle' title='�ӹǹ ��û�Ъ�� �ҡ���� 30 ����' />&nbsp;�ӹǹ ��û�Ъ��  �ҡ���� 30 ����&nbsp;&nbsp;");		
+			echo ("<img src='images/promo_green.png' align='absmiddle' title='¨Ó¹Ç¹¡ÒÃ»ÃÐªØÁ 1-10 ¤ÃÑé§' />&nbsp;¨Ó¹Ç¹ ¡ÒÃ»ÃÐªØÁ 1-10 ¤ÃÑé§&nbsp;&nbsp;");
+			echo ("<img src='images/promo_green_light.png' align='absmiddle' title='¨Ó¹Ç¹¡ÒÃ»ÃÐªØÁ 11-20 ¤ÃÑé§' />&nbsp;¨Ó¹Ç¹ ¡ÒÃ»ÃÐªØÁ 11-20 ¤ÃÑé§&nbsp;&nbsp;");
+			echo ("<img src='images/promo_orange.png' align='absmiddle' title='¨Ó¹Ç¹¡ÒÃ»ÃÐªØÁ  21-30 ¤ÃÑé§' />&nbsp;¨Ó¹Ç¹ ¡ÒÃ»ÃÐªØÁ  21-30 ¤ÃÑé§&nbsp;&nbsp;");
+			echo ("<img src='images/promo_red.png' align='absmiddle' title='¨Ó¹Ç¹ ¡ÒÃ»ÃÐªØÁ ÁÒ¡¡ÇèÒ 30 ¤ÃÑé§' />&nbsp;¨Ó¹Ç¹ ¡ÒÃ»ÃÐªØÁ  ÁÒ¡¡ÇèÒ 30 ¤ÃÑé§&nbsp;&nbsp;");		
 		?>
        </div>
-		<!--<div style="height:37px"><strong>�����˵� : </strong>�ͤ͹&nbsp;<img src='images/icon-meeting.png' align="absmiddle" width="35px"/>&nbsp;����ҡ�㹻�ԷԹ ����ö��ԡ�����ʴ���������´�����ҧ��ҹ��ҧ</div>-->
+		<!--<div style="height:37px"><strong>ËÁÒÂàËµØ : </strong>äÍ¤Í¹&nbsp;<img src='images/icon-meeting.png' align="absmiddle" width="35px"/>&nbsp;·Õè»ÃÒ¡¯ã¹»¯Ô·Ô¹ ÊÒÁÒÃ¶¤ÅÔ¡à¾×èÍáÊ´§ÃÒÂÅÐàÍÕÂ´·ÕèµÒÃÒ§´éÒ¹ÅèÒ§</div>-->
 		        
 	</div>
     <div id="tab2" class="tab_content">
@@ -449,14 +450,14 @@ $(document).ready(function() {
 					$nextTenPage=$page+$board_row_per_page;$next_TenPage=($next_TenPage >= $total_page)?$total_page:$next_TenPage;
 					$nextTen = "self.location='".$PHP_SELF."?search=$search$strList&page2=$nextTenPage$link$solink'";
 				?>
-				<? if($View==""){$Klink="?View=All$strList"; $CSh="�����ŷ�����"; $Klink2="?View=$strList";}else{$Klink="?View=$strList";$CSh="������ ".$board_row_per_page." ��¡������ش";$Klink2="?&View=All$strList";}?>
-				������ <b> <font color="#CC0000">
+				<? if($View==""){$Klink="?View=All$strList"; $CSh="¢éÍÁÙÅ·Ñé§ËÁ´"; $Klink2="?View=$strList";}else{$Klink="?View=$strList";$CSh="¢éÍÁÙÅ ".$board_row_per_page." ÃÒÂ¡ÒÃÅèÒÊØ´";$Klink2="?&View=All$strList";}?>
+				·Ñé§ËÁ´ <b> <font color="#CC0000">
 				<?=number_format($all_row);?>
-				</font> </b> ��¡��
+				</font> </b> ÃÒÂ¡ÒÃ
 				<? if($View==""){?>
-				���� <b><font color="#0033CC">
+				áºè§à»ç¹ <b><font color="#0033CC">
 				<?=number_format($total_page);?>
-				</font></b> ˹��
+				</font></b> Ë¹éÒ
 				<? }?>
 				&nbsp;&nbsp;<a href="<?=$Klink?>"><img src="../../images/Search-Add.gif" alt="<?=$CSh?>" width="16" height="16" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
 					  <? if($View==''){?>
@@ -534,11 +535,11 @@ $(document).ready(function() {
 			 <table id="my_table" width="99%" border="0" align="center" bgcolor="#CCCCCC" cellpadding="5" cellspacing="1">
 			 <thead>
 			  <tr  align="center">
-				<th width="45"  class="head_bar_small">�ӴѺ���</th>
-				<th width="180"  class="head_bar_small">˹��§ҹ</th>
-				<th  class="head_bar_small">������û�Ъ��</th>
-			    <th width="90"  class="head_bar_small">�ѹ����Ъ��</th>
-			    <th width="65"  class="head_bar_small">���һ�Ъ��</th>
+				<th width="45"  class="head_bar_small">ÅÓ´Ñº·Õè</th>
+				<th width="180"  class="head_bar_small">Ë¹èÇÂ§Ò¹</th>
+				<th  class="head_bar_small">â»Ãä¿Åì¡ÒÃ»ÃÐªØÁ</th>
+			    <th width="90"  class="head_bar_small">ÇÑ¹·Õè»ÃÐªØÁ</th>
+			    <th width="65"  class="head_bar_small">àÇÅÒ»ÃÐªØÁ</th>
 			  </tr>
 			  </thead>
 			  <?php
@@ -557,9 +558,9 @@ $(document).ready(function() {
 				<td <?=$ALIGNMENT['TEXT']?>><?=getSecName($row[siteid])?></td>
 				<td <?=$ALIGNMENT['TEXT']?>>
 				<?php if ($row[meeting_id] != "") { ?>
-				<a href='meeting_paper.php?meeting_id=<?=$row[meeting_id]?>&siteid=<?=$row['siteid']?>' target='_blank'><?=$row[profile_name]." ���駷�� ".$row[profile_no]."/".$row[profile_year];?></a>
+				<a href='meeting_paper.php?meeting_id=<?=$row[meeting_id]?>&siteid=<?=$row['siteid']?>' target='_blank'><?=$row[profile_name]." ¤ÃÑé§·Õè ".$row[profile_no]."/".$row[profile_year];?></a>
 				<?php 	} else { 
-				echo $row[profile_name]." ���駷�� ".$row[profile_no]."/".$row[profile_year];
+				echo $row[profile_name]." ¤ÃÑé§·Õè ".$row[profile_no]."/".$row[profile_year];
 						}	
 				?>	</td>
 			    <td <?=$ALIGNMENT['DATE']?>><?=dateFormat($row[date_start],'thaidot')?></td>
@@ -572,19 +573,19 @@ $(document).ready(function() {
     </div>
     
     <div id="tab3" class="tab_content">
-		<!--<div align="right"><img src="images/filter-icon.png" title="��ǡ�ͧ"></div>-->
+		<!--<div align="right"><img src="images/filter-icon.png" title="µÑÇ¡ÃÍ§"></div>-->
 <table id="my_table" width="99%" border="0" align="center" bgcolor="#CCCCCC" cellpadding="5" cellspacing="1">
 	<thead>
     <tr class="head_bar_small">
-    	<td align="center" rowspan="2">�ӴѺ</td>
-        <td align="center" rowspan="2">�ӹѡ�ҹࢵ��鹷�����֡��</td>
-        <td align="center" colspan="4">�ӹǹ��§ҹ��û�Ъ��</td>
+    	<td align="center" rowspan="2">ÅÓ´Ñº</td>
+        <td align="center" rowspan="2">ÊÓ¹Ñ¡§Ò¹à¢µ¾×é¹·Õè¡ÒÃÈÖ¡ÉÒ</td>
+        <td align="center" colspan="4">¨Ó¹Ç¹ÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ</td>
     </tr>
     <tr class="head_bar_small"  align="center">
-		<td>�ӹǹ������</td>
-		<td>�Ѻ��Һ</td>
-		<td>����Ѻ��Һ</td>
-		<td>���������ҧ���Թ���</td>
+		<td>¨Ó¹Ç¹·Ñé§ËÁ´</td>
+		<td>ÃÑº·ÃÒº</td>
+		<td>äÁèÃÑº·ÃÒº</td>
+		<td>ÍÂÙèÃÐËÇèÒ§´Óà¹Ô¹¡ÒÃ</td>
     </tr>
     <?php
 	$sql_area = "SELECT
@@ -695,19 +696,19 @@ $(document).ready(function() {
 										
 						";
 						$get .= "&search_key=$search_key";
-						$search_result .= "�Ӥ���: ".$search_key."<br>";
+						$search_result .= "¤Ó¤é¹ËÒ: ".$search_key."<br>";
 					}
 					
 					if($_GET[profile_no] != "" && $_GET[CL_no]){
 						$where .= " AND profile_no = '$profile_no'";
 						$get .= "&profile_no=$profile_no";
-						$search_result .= "���駷��: ".$profile_no."<br>";
+						$search_result .= "¤ÃÑé§·Õè: ".$profile_no."<br>";
 					}
 					
 					if($_GET[profile_year] != "" && $_GET[CL_yy]){
 						$where .= " AND profile_year = '$profile_year'";
 						$get .= "&profile_year=$profile_year";
-						$search_result .= "�� �.�.: ".$profile_year."<br>";
+						$search_result .= "»Õ ¾.È.: ".$profile_year."<br>";
 					}
 					
 					if($_GET[place_id] != "" && $_GET[CL_location]){
@@ -717,7 +718,7 @@ $(document).ready(function() {
 							$rs = mysql_db_query('cmss_master',$sql);
 								$row = mysql_fetch_assoc($rs);
 								$place_name = $row[place_name];
-						$search_result .= "ʶҹ���: ".$place_name."<br>";
+						$search_result .= "Ê¶Ò¹·Õè: ".$place_name."<br>";
 					}
 					
 					if($_GET[date_start] != "" && $_GET[CL_date]){
@@ -726,14 +727,14 @@ $(document).ready(function() {
 						$d_s = ($arr_d[2]-543)."-".$arr_d[1]."-".$arr_d[0];
 						$where .= " AND date_start >= '$d_s'";
 						$get .= "&date_start=$date_start";
-						$search_result .= "�ѹ����Ъ��: ".$date_start."<br>";	
+						$search_result .= "ÇÑ¹·Õè»ÃÐªØÁ: ".$date_start."<br>";	
 					}
 					if($_GET[date_end] != "" && $_GET[CL_date]){
 						$arr_d = explode("/",$_GET[date_end]);
 						$d_e = ($arr_d[2]-543)."-".$arr_d[1]."-".$arr_d[0];
 						$where .= " AND date_start <= '$d_e'";
 						$get .= "&date_end=$date_end";
-						$search_result .= "�֧�ѹ����Ъ��: ".$date_end."<br>";
+						$search_result .= "¶Ö§ÇÑ¹·Õè»ÃÐªØÁ: ".$date_end."<br>";
 					}if($_GET[date_end] == "" && $_GET[CL_date]){
 						
 						$arr_d = explode("/",$_GET[date_start]);
@@ -743,7 +744,7 @@ $(document).ready(function() {
 					
 					
 					
-					//��������ú����çҹ�ؤ��
+					//»ÃÐàÀ·¡ÒÃºÃÔËÒÃ§Ò¹ºØ¤¤Å
 					if($_GET[CL_type_sel] != "" && $_GET[CL_type]){
 						$sql_human_manage ="SELECT
 												$dbsite.agenda_meeting_subject.meeting_id
@@ -766,12 +767,12 @@ $(document).ready(function() {
 							$rs = mysql_db_query('command_verification',$sql);
 								$row = mysql_fetch_assoc($rs);
 								$CL_type_sel = $row[cat_name];
-						$search_result .= "��������ú����çҹ�ؤ�� : ".$CL_type_sel."<br>";
+						$search_result .= "»ÃÐàÀ·¡ÒÃºÃÔËÒÃ§Ò¹ºØ¤¤Å : ".$CL_type_sel."<br>";
 
 						
 					}
 					
-					// ���С�û�Ъ��
+					// ÇÒÃÐ¡ÒÃ»ÃÐªØÁ
 					if($_GET[CL_agenda_sel] != "" && $_GET[CL_agenda]){
 						$sql_agenda_type = "SELECT meeting_id FROM `agenda_meeting_subject` WHERE subject_ini_id = '".$_GET[CL_agenda_sel]."' GROUP BY meeting_id;";
 						//echo $sql_agenda_type."<hr>";die;
@@ -786,7 +787,7 @@ $(document).ready(function() {
 							$rs = mysql_db_query('cmss_master',$sql);
 								$row = mysql_fetch_assoc($rs);
 								$CL_agenda_sel = $row[initial_subject];
-						$search_result .= "���С�û�Ъ�� : ".$CL_agenda_sel."<br>";
+						$search_result .= "ÇÒÃÐ¡ÒÃ»ÃÐªØÁ : ".$CL_agenda_sel."<br>";
 					}
 					
 					
@@ -799,12 +800,12 @@ $(document).ready(function() {
 			<table width="98%" border="0">
 			  <tr>
 				<td align="right" colspan="2">
-				<!--<span id="msg_search_result"><strong style="font-size:14px"><a href='<?=$PHP_SELF?>?li=3&area=<?=$_GET[area]?>'>�ʴ�������</a></strong>&nbsp;&nbsp;</span>  <label onclick="window.open('search_master.php?li=3&area=<?php echo $_GET['area']; ?>');" onmouseover="this.style.cursor='pointer'" style="font-size:14px; color:#4A79BD"><img src="images/search_64.png" width="18" align="absmiddle"  title="������§ҹ��û�Ъ��" /><strong>������§ҹ��û�Ъ��</strong></label> 				
+				<!--<span id="msg_search_result"><strong style="font-size:14px"><a href='<?=$PHP_SELF?>?li=3&area=<?=$_GET[area]?>'>áÊ´§·Ñé§ËÁ´</a></strong>&nbsp;&nbsp;</span>  <label onclick="window.open('search_master.php?li=3&area=<?php echo $_GET['area']; ?>');" onmouseover="this.style.cursor='pointer'" style="font-size:14px; color:#4A79BD"><img src="images/search_64.png" width="18" align="absmiddle"  title="¤é¹ËÒÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ" /><strong>¤é¹ËÒÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ</strong></label> 				
 				-->
-					<!--<div class="pusher" id="slideToggle"><span onmouseover="this.style.backgroundColor='#dbf2ae' " onmouseout="this.style.backgroundColor='#FFFFFF'"><strong>������§ҹ��û�Ъ��<img src="images/search_64.png" width="16" align="absmiddle" title="������§ҹ��û�Ъ��" /></strong></span></div>
+					<!--<div class="pusher" id="slideToggle"><span onmouseover="this.style.backgroundColor='#dbf2ae' " onmouseout="this.style.backgroundColor='#FFFFFF'"><strong>¤é¹ËÒÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ<img src="images/search_64.png" width="16" align="absmiddle" title="¤é¹ËÒÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ" /></strong></span></div>
 				-->
 				<div class="container"  style="width:100%">
-				 <div class="pusher" id="slideToggle"><span onmouseover="this.style.backgroundColor='#dbf2ae' " onmouseout="this.style.backgroundColor='#FFFFFF'"><strong>������§ҹ��û�Ъ��<img src="images/search_64.png" width="16" align="absmiddle" title="������§ҹ��û�Ъ��" /></strong></span></div>
+				 <div class="pusher" id="slideToggle"><span onmouseover="this.style.backgroundColor='#dbf2ae' " onmouseout="this.style.backgroundColor='#FFFFFF'"><strong>¤é¹ËÒÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ<img src="images/search_64.png" width="16" align="absmiddle" title="¤é¹ËÒÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ" /></strong></span></div>
 					<div style="display: none;" class="mover">
 					  <?php
 						include "search_master3.php";
@@ -821,7 +822,7 @@ $(document).ready(function() {
 			?>
 			<table width="100%" border="0" style="background-color:#EFF2F5; border:#D2E6F0 1px solid;">
 			  <tr>
-				<td><strong>���͹䢡�ä���</strong></td>
+				<td><strong>à§×èÍ¹ä¢¡ÒÃ¤é¹ËÒ</strong></td>
 			  </tr>
 			  <tr>
 				<td>
@@ -881,14 +882,14 @@ $(document).ready(function() {
 					$nextTenPage=$page+$board_row_per_page;$next_TenPage=($next_TenPage >= $total_page)?$total_page:$next_TenPage;
 					$nextTen = "self.location='".$PHP_SELF."?search=$search$strList&page=$nextTenPage$link$solink$getData'";
 				?>
-				<? if($View==""){$Klink="?View=All$strList"; $CSh="�����ŷ�����"; $Klink2="?View=$strList";}else{$Klink="?View=$strList";$CSh="������ ".$board_row_per_page." ��¡������ش";$Klink2="?&View=All$strList";}?>
-				������ <b> <font color="#CC0000">
+				<? if($View==""){$Klink="?View=All$strList"; $CSh="¢éÍÁÙÅ·Ñé§ËÁ´"; $Klink2="?View=$strList";}else{$Klink="?View=$strList";$CSh="¢éÍÁÙÅ ".$board_row_per_page." ÃÒÂ¡ÒÃÅèÒÊØ´";$Klink2="?&View=All$strList";}?>
+				·Ñé§ËÁ´ <b> <font color="#CC0000">
 				<?=number_format($all_row);?>
-				</font> </b> ��¡��
+				</font> </b> ÃÒÂ¡ÒÃ
 				<? if($View==""){?>
-				���� <b><font color="#0033CC">
+				áºè§à»ç¹ <b><font color="#0033CC">
 				<?=number_format($total_page);?>
-				</font></b> ˹��
+				</font></b> Ë¹éÒ
 				<? }?>
 				&nbsp;&nbsp;<a href="<?=$Klink?>"><img src="../../images/Search-Add.gif" alt="<?=$CSh?>" width="16" height="16" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
 					  <? if($View==''){?>
@@ -963,17 +964,17 @@ $(document).ready(function() {
 			 <table id="my_table" width="99%" border="0" align="center" bgcolor="#CCCCCC" cellpadding="5" cellspacing="1">
 			 <thead>
 			  <tr  align="center">
-				<th width="45"  class="head_bar_small">�ӴѺ���</th>
-				<th  class="head_bar_small">������û�Ъ��</th>
-				<th width="90"  class="head_bar_small">�ѹ����Ъ��</th>
-				<th width="65"  class="head_bar_small">���һ�Ъ��</th>
-				<th width="85"  class="head_bar_small">�Ѻ��Һ��§ҹ<br/>
-			    ��û�Ъ��</th>
-				<th width="55"  class="head_bar_small">��èѴ���</th>
+				<th width="45"  class="head_bar_small">ÅÓ´Ñº·Õè</th>
+				<th  class="head_bar_small">â»Ãä¿Åì¡ÒÃ»ÃÐªØÁ</th>
+				<th width="90"  class="head_bar_small">ÇÑ¹·Õè»ÃÐªØÁ</th>
+				<th width="65"  class="head_bar_small">àÇÅÒ»ÃÐªØÁ</th>
+				<th width="85"  class="head_bar_small">ÃÑº·ÃÒºÃÒÂ§Ò¹<br/>
+			    ¡ÒÃ»ÃÐªØÁ</th>
+				<th width="55"  class="head_bar_small">¡ÒÃ¨Ñ´¡ÒÃ</th>
 			  </tr>
 			  </thead>
 			  <?php
-				### �ʴ���§ҹ��� �Է���
+				### áÊ´§ÃÒÂ§Ò¹µÒÁ ÊÔ·¸Ôì
 			//	$where_staffgroup="";
 			//	if($role_executive || $role_user)
 			//	{
@@ -996,32 +997,32 @@ $(document).ready(function() {
 				<td <?=$ALIGNMENT['ORDER']?>><?=$int_num?></td>
 				<td <?=$ALIGNMENT['TEXT']?>><?php if ($row[meeting_id] != "") { ?>
                     <a href='meeting_report_paper.php?meeting_id=<?=$row[meeting_id]?>&amp;siteid=<?=$row['siteid']?>' target='_blank'>
-                      <?=$row[profile_name]." ���駷�� ".$row[profile_no]."/".$row[profile_year];?>
+                      <?=$row[profile_name]." ¤ÃÑé§·Õè ".$row[profile_no]."/".$row[profile_year];?>
                   </a>
                     <?php 	} else { 
-				echo $row[profile_name]." ���駷�� ".$row[profile_no]."/".$row[profile_year];
+				echo $row[profile_name]." ¤ÃÑé§·Õè ".$row[profile_no]."/".$row[profile_year];
 						}	
 				?>
                 </td>
 				<td <?=$ALIGNMENT['DATE']?>><?=dateFormat($row[date_start],'thaidot')?></td>
-				<td <?=$ALIGNMENT['DATE']?>><?=$row[time_start] != "" ? substr($row[time_start],0,5)." �." : "-" ?></td>
-				<td <?=$ALIGNMENT['DATE']?>><?=$row[approve]=="Y" ? "<img src='images/tick_16.png' title='��������´ : ".$row[approve_detail]."' align='absmiddle'/>" : "-" ?></td>
+				<td <?=$ALIGNMENT['DATE']?>><?=$row[time_start] != "" ? substr($row[time_start],0,5)." ¹." : "-" ?></td>
+				<td <?=$ALIGNMENT['DATE']?>><?=$row[approve]=="Y" ? "<img src='images/tick_16.png' title='ÃÒÂÅÐàÍÕÂ´ : ".$row[approve_detail]."' align='absmiddle'/>" : "-" ?></td>
 				<?
-					### ��Ǩ�ͺ����ѳ�� ������ ��� �ú��˹��׹ ��ǹ��ҧ
+					### µÃÇ¨ÊÍº¤ÃØÀÑ³±ì ·Õèã¡Åé áÅÐ ¤Ãº¡ÓË¹´¤×¹ ÊèÇ¹¡ÅÒ§
 					if($row_da_list['rotation_status']!='o'){
 						if($Result_Return['return_date']!=''){
 							$strImage='';			
 							if(chkDateReturn($Result_Return['return_date'],date('Y-m-d'))=='1' && $Result_Return[status]=='b'){
-									$strImage='<img src="img/icon-warning.png"  align="absmiddle" width="16" height="16" border="0" title="���ú��˹��׹"/>';
+									$strImage='<img src="img/icon-warning.png"  align="absmiddle" width="16" height="16" border="0" title="ã¡Åé¤Ãº¡ÓË¹´¤×¹"/>';
 							}else if(chkDateReturn($Result_Return['return_date'],date('Y-m-d'))=='2' && $Result_Return[status]=='b'){
-									$strImage='<img src="img/WarningLogoRed.png" align="absmiddle" width="16" height="16" border="0" title="�Թ��˹��׹"/>';
+									$strImage='<img src="img/WarningLogoRed.png" align="absmiddle" width="16" height="16" border="0" title="à¡Ô¹¡ÓË¹´¤×¹"/>';
 							}
 						}
 					}
 				?>
 				<td align="center">
-				<!--<img src="images/16x16/next.png" align="absmiddle" onmouseover="this.style.cursor='pointer'" title="���Ѻ��Һ��§ҹ" onclick="window.open('meeting_report_executive2.php?meeting_id=<?=$row[meeting_id]?>&siteid=<?=$row['siteid']?>')"></img>-->
-				<img src="images/16x16/next.png" align="absmiddle" onmouseover="this.style.cursor='pointer'" title="���Ѻ��Һ��§ҹ" onclick="window.location='meeting_report_executive2.php?meeting_id=<?=$row[meeting_id]?>&siteid=<?=$row['siteid']?>'"></img></td>
+				<!--<img src="images/16x16/next.png" align="absmiddle" onmouseover="this.style.cursor='pointer'" title="á¨é§ÃÑº·ÃÒºÃÒÂ§Ò¹" onclick="window.open('meeting_report_executive2.php?meeting_id=<?=$row[meeting_id]?>&siteid=<?=$row['siteid']?>')"></img>-->
+				<img src="images/16x16/next.png" align="absmiddle" onmouseover="this.style.cursor='pointer'" title="á¨é§ÃÑº·ÃÒºÃÒÂ§Ò¹" onclick="window.location='meeting_report_executive2.php?meeting_id=<?=$row[meeting_id]?>&siteid=<?=$row['siteid']?>'"></img></td>
 			  </tr>
 			  <?php 
 			  }
@@ -1030,7 +1031,7 @@ $(document).ready(function() {
 			
 			<table width="99%" align="center" border="0" cellspacing="1" cellpadding="3">
 			  <tr>
-				<td align="left"><img src="images/tick_16.png" title="�Ѻ��Һ��§ҹ��û�Ъ��" align="absmiddle" />&nbsp;: &nbsp;�Ѻ��Һ��§ҹ��û�Ъ��</td>
+				<td align="left"><img src="images/tick_16.png" title="ÃÑº·ÃÒºÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ" align="absmiddle" />&nbsp;: &nbsp;ÃÑº·ÃÒºÃÒÂ§Ò¹¡ÒÃ»ÃÐªØÁ</td>
 			  </tr>
 			</table>			
 
@@ -1059,7 +1060,7 @@ $(document).ready(function() {
 </div><!-- END li5 -->
     
     
-	<!--��ҿ-->
+	<!--¡ÃÒ¿-->
 	 <div id="tab4" class="tab_content">
               
 <?
@@ -1073,7 +1074,7 @@ $(document).ready(function() {
 						$this_year = $bugget_year+543;
                         $w1 = 570;
                         $h1 = 295;
-                        $report_list = "���Ҥ� �� ".$last_year.";��ɨԡ�¹ �� ".$last_year.";�ѹ�Ҥ� �� ".$last_year.";���Ҥ� �� ".$this_year.";����Ҿѹ�� �� ".$this_year.";�չҤ� �� ".$this_year.";����¹ �� ".$this_year.";����Ҥ� �� ".$this_year.";�Զع�¹ �� ".$this_year.";�á�Ҥ� �� ".$this_year.";�ԧ�Ҥ� �� ".$this_year.";�ѹ��¹ �� ".$this_year."";
+                        $report_list = "µØÅÒ¤Á »Õ ".$last_year.";¾ÄÉ¨Ô¡ÒÂ¹ »Õ ".$last_year.";¸Ñ¹ÇÒ¤Á »Õ ".$last_year.";Á¡ÃÒ¤Á »Õ ".$this_year.";¡ØÁÀÒ¾Ñ¹¸ì »Õ ".$this_year.";ÁÕ¹Ò¤Á »Õ ".$this_year.";àÁÉÒÂ¹ »Õ ".$this_year.";¾ÄÉÀÒ¤Á »Õ ".$this_year.";ÁÔ¶Ø¹ÒÂ¹ »Õ ".$this_year.";¡Ã¡¯Ò¤Á »Õ ".$this_year.";ÊÔ§ËÒ¤Á »Õ ".$this_year.";¡Ñ¹ÂÒÂ¹ »Õ ".$this_year."";
                         $data1 = "10;11;12;1;2;3;4;5;6;7;8;9";
 						
 						$month = date(m);
@@ -1108,9 +1109,9 @@ $(document).ready(function() {
 						}
 						//$report_list = implode(";",$month_list);
 						$data1 = implode(";",$data_list);
-						$xname = " ��ҿʶԵԡ�û�Ъ���ͧʾ�. �է�����ҳ (".$this_year.") ".str_replace("�ӹѡ�ҹࢵ��鹷�����֡��","",$caption);
+						$xname = " ¡ÃÒ¿Ê¶ÔµÔ¡ÒÃ»ÃÐªØÁ¢Í§Ê¾·. »Õ§º»ÃÐÁÒ³ (".$this_year.") ".str_replace("ÊÓ¹Ñ¡§Ò¹à¢µ¾×é¹·Õè¡ÒÃÈÖ¡ÉÒ","",$caption);
                         ?>
-                       <iframe src="../agenda/graphservice.php?category=<?php echo $report_list ?>&data1=<?php echo $data1 ?>&outputstyle=&numseries=1&seriesname=;&graphtype=line&title=&title=<?php echo $xname ?>&yname=�ӹǹ����&subtitle=&graphstyle=srd_allvisible_sf_18" scrolling="no" width="100%" height="393px"></iframe>
+                       <iframe src="../agenda/graphservice.php?category=<?php echo $report_list ?>&data1=<?php echo $data1 ?>&outputstyle=&numseries=1&seriesname=;&graphtype=line&title=&title=<?php echo $xname ?>&yname=¨Ó¹Ç¹¤ÃÑé§&subtitle=&graphstyle=srd_allvisible_sf_18" scrolling="no" width="100%" height="393px"></iframe>
                         
 	 </div>
 </div
